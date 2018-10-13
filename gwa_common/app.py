@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restful import Resource, Api
+from flask_restful import Api
 
 from gwa_common.resources.hello_word import HelloWorld
 
