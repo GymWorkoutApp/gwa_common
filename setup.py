@@ -12,7 +12,7 @@ setuptools.setup(
     name='gwa_common.server',
     version=gwa_common.__version__,
 
-    url='https://bitbucket.org/serasaecs/ecs-lib-boleto-python',
+    url='',
     description='Microservice that keep endpoints commons to GWA.',
     long_description=long_description(),
     long_description_content_type="text/markdown",

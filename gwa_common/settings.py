@@ -11,6 +11,8 @@ AUTO_RELOAD = config('AUTO_RELOAD', default=False, cast=bool)
 PORT = config('PORT', default=8000, cast=int)
 HOST = config('HOST', default='127.0.0.1')
 
+GWA_ENVIRONMENT = config('GWA_ENVIRONMENT')
+
 
 class GWAAppConfig:
 

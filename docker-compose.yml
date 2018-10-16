@@ -7,12 +7,12 @@ services:
       - 8000:80
     depends_on:
       - redis_gwa_common
-      - postgres
+      - postgres_gwa_common
     links:
       - redis_gwa_common
-      - postgres
+      - postgres_gwa_common
     env_file:
-      - .env-example
+      - hml.env
 
   redis_gwa_common:
     container_name: redis_gwa_common
@@ -20,8 +20,8 @@ services:
     ports:
       - 6379:6379
 
-  postgres:
-    container_name: postgres
+  postgres_gwa_common:
+    container_name: postgres_gwa_common
     image: postgres:alpine
     expose:
     - 5432

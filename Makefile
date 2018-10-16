@@ -33,6 +33,22 @@ coverage_html: coverage
 coverage_open: coverage_html
 	@cd static/coverage_report && open http://127.0.0.1:8090/ || google-chrome http://127.0.0.1:8090/ && python3 -m http.server 8090
 
+
+.PHONY: db_revision
+db_revision:
+	alembic revision --autogenerate;
+
+.PHONY: db_upgrade
+db_upgrade:
+	alembic upgrade head
+
+db_upgrade_sql:
+	alembic upgrade head --sql
+
+.PHONY: db_ddowngrade
+db_downgrade:
+	alembic downgrade head
+
 # Create a new release
 # Usage: make release v=1.0.0
 release:
