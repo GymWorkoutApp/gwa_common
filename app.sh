@@ -4,7 +4,7 @@
 #   Email : dalmarco.gd@gmail.com
 
 #   This script is used to start applications on docker
-#   You need environment variable GWA_ENVIRONMENT set for production/homolog
+#   You need environments variable GWA_ENVIRONMENT set for production/homolog
 
 
 #   By default (without GWA_ENVIRONMENT set) we run as "dev"
@@ -26,7 +26,7 @@ f_run_prd() {
     #aws ssm get-parameters --names ${ECS_ENVIRONMENT}.${ECS_APPLICATION} --with-decryption --region ${AWS_REGION} | jq --raw-output .Parameters[0].Value > .env
     #source prd.env
 
-    for DOTENV_VAR in $(cat prd.env)
+    for DOTENV_VAR in $(cat environments/prd.env)
     do
         #JAR_PARAMS="${JAR_PARAMS} -D${DOTENV_VAR} "
         export ${DOTENV_VAR}
@@ -50,7 +50,7 @@ f_run_hml() {
     #aws ssm get-parameters --names ${ECS_ENVIRONMENT}.${ECS_APPLICATION} --with-decryption --region ${AWS_REGION} | jq --raw-output .Parameters[0].Value > .env
     #source prd.env
 
-    for DOTENV_VAR in $(cat hml.env)
+    for DOTENV_VAR in $(cat environments/hml.env)
     do
         #JAR_PARAMS="${JAR_PARAMS} -D${DOTENV_VAR} "
         export ${DOTENV_VAR}
