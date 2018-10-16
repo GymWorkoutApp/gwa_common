@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  gwa_common:
+    build: .
+    ports:
+      - 8000:80
+    depends_on:
+      - redis_gwa_common
+      - postgres
+    links:
+      - redis_gwa_common
+      - postgres
+    env_file:
+      - .env-example
+
+  redis_gwa_common:
+    container_name: redis_gwa_common
+    image: redis:alpine
+    ports:
+      - 6379:6379
+
+  postgres:
+    container_name: postgres
+    image: postgres:alpine
+    expose:
+    - 5432
+    ports:
+    - 5432:5432
+    environment:
+      POSTGRES_DB: gwa_common_db
+      POSTGRES_USER: gwa_common
+      POSTGRES_PASSWORD: D1685E7932B7B71F138CECE1C0300414
