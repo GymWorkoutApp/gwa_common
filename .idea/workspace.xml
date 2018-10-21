@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa3de0f2-c243-4522-9272-fb007678b7ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alembic/versions/45b70915b443_create_tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/alembic/versions/45b70915b443_create_tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/app.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/environments/hml.env" beforeDir="false" afterPath="$PROJECT_DIR$/environments/hml.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environments/prd.env" beforeDir="false" afterPath="$PROJECT_DIR$/environments/prd.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gwa_common/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/gwa_common/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gwa_common/models/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/gwa_common/models/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gwa_common/models/goal.py" beforeDir="false" afterPath="$PROJECT_DIR$/gwa_common/models/goal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gwa_common/resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/gwa_common/resources/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gwa_common/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/gwa_common/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,10 +58,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Dockerfile" value="5" />
+          <entry key="Dockerfile" value="6" />
           <entry key="Makefile" value="6" />
           <entry key="alembic_version" value="2" />
-          <entry key="env" value="15" />
+          <entry key="env" value="16" />
           <entry key="env-example" value="3" />
           <entry key="gitignore" value="2" />
           <entry key="goals" value="2" />
@@ -90,10 +78,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="11" />
+          <entry key=".env file" value="12" />
           <entry key="Bash" value="3" />
           <entry key="Database Element" value="4" />
-          <entry key="Dockerfile" value="5" />
+          <entry key="Dockerfile" value="6" />
           <entry key="Ini" value="6" />
           <entry key="Mako" value="1" />
           <entry key="PLAIN_TEXT" value="30" />
@@ -106,10 +94,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Dockerfile" value="44" />
+          <entry key="Dockerfile" value="48" />
           <entry key="Makefile" value="76" />
           <entry key="dummy" value="4" />
-          <entry key="env" value="87" />
+          <entry key="env" value="91" />
           <entry key="env-example" value="21" />
           <entry key="gitignore" value="24" />
           <entry key="ini" value="28" />
@@ -121,9 +109,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key=".env file" value="74" />
+          <entry key=".env file" value="78" />
           <entry key="Bash" value="147" />
-          <entry key="Dockerfile" value="44" />
+          <entry key="Dockerfile" value="48" />
           <entry key="Ini" value="28" />
           <entry key="PLAIN_TEXT" value="397" />
           <entry key="Python" value="2882" />
@@ -197,6 +185,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/environments/hml.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alembic/env.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="295">
@@ -204,6 +201,15 @@
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -274,8 +280,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/alembic/env.py" />
         <option value="$PROJECT_DIR$/app.sh" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
-        <option value="$PROJECT_DIR$/environments/hml.env" />
         <option value="$PROJECT_DIR$/gwa_common/settings.py" />
         <option value="$PROJECT_DIR$/gwa_common/resources/goal.py" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
@@ -288,6 +292,8 @@
         <option value="$PROJECT_DIR$/gwa_common/app.py" />
         <option value="$PROJECT_DIR$/alembic/versions/45b70915b443_create_tables.py" />
         <option value="$PROJECT_DIR$/environments/prd.env" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/environments/hml.env" />
       </list>
     </option>
   </component>
@@ -466,7 +472,7 @@
     <frame x="0" y="23" width="1440" height="837" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28540772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28540772" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -480,7 +486,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32885906" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3261745" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3261745" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32885906" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32885906" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32885906" />
@@ -708,13 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gwa_common/manage.py" />
     <entry file="file://$PROJECT_DIR$/../../../../Virtualenvs/GymWorkoutApp/gwa_common.server/lib/python3.7/site-packages/gunicorn/glogging.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -772,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environments/hml.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gwa_common/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -830,13 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environments/prd.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/alembic/env.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -844,6 +829,27 @@
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/prd.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/hml.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
         </state>
       </provider>
     </entry>
