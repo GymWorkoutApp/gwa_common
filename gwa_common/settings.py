@@ -8,10 +8,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 AUTO_RELOAD = config('AUTO_RELOAD', default=False, cast=bool)
-PORT = config('PORT', default=8000, cast=int)
+PORT = config('PORT', default=8001, cast=int)
 HOST = config('HOST', default='127.0.0.1')
 
-GWA_ENVIRONMENT = config('GWA_ENVIRONMENT')
+GWA_ENVIRONMENT = config('GWA_ENVIRONMENT', default='dev')
 
 
 class GWAAppConfig:
@@ -23,7 +23,7 @@ class GWAAppConfig:
 
 
 class DatabaseConfig:
-    DB_HOST = config('DB_HOST', default='postgresql://127.0.0.1:5432')
+    DB_HOST = config('DB_HOST', default='127.0.0.1:5432')
     DB_USER = config('DB_USER', default='gwa_common')
     DB_PASSWORD = config('DB_PASSWORD', default='D1685E7932B7B71F138CECE1C0300414')
     DB_NAME = config('DB_NAME', default='gwa_common_db')

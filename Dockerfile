@@ -25,7 +25,7 @@ RUN pip install -U pip && pip install -r requirements.txt
 RUN cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
     echo "America/Sao_Paulo" > /etc/timezone
 
-EXPOSE 80
+EXPOSE 8000
 
 # ENTRYPOINT
 ENTRYPOINT ["sh", "app.sh", "gwa_common:app"]

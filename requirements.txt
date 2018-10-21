@@ -8,4 +8,4 @@ flask-cors==3.0.6
 flask_script==2.0.6
 python-decouple==3.1
 psycopg2==2.7.5
-git+git://github.com/GymWorkoutApp/gwa_framework.lib.git@0.0.3#egg=gwa_framework.lib
+git+git://github.com/GymWorkoutApp/gwa_framework.lib.git@0.0.10

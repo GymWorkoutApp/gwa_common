@@ -3,14 +3,15 @@ version: '3'
 services:
   gwa_common:
     build: .
+    expose:
+      - 8000
     ports:
-      - 8000:80
+      - 8000:8000
     depends_on:
       - redis_gwa_common
       - postgres_gwa_common
     links:
       - redis_gwa_common
-      - postgres_gwa_common
     env_file:
       - environments/hml.env
 

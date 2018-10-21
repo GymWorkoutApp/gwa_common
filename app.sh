@@ -14,7 +14,13 @@ then
 fi
 
 # DOCKER ENTRYPOINT GIVE US THE EXECUTION FILE AS PARAMETER
-APP="gunicorn --workers=${nproc} --worker-class='egg:meinheld#gunicorn_worker' ${1}"
+cpu_count=${nproc}
+if [ -z "${cpu_count}" ]
+then
+    cpu_count=2
+fi
+echo "CPU Count=${cpu_count}"
+APP="gunicorn --workers=${cpu_count} --worker-class=egg:meinheld#gunicorn_worker ${1}"
 
 
 #
@@ -28,8 +34,8 @@ f_run_prd() {
 
     for DOTENV_VAR in $(cat environments/prd.env)
     do
-        #JAR_PARAMS="${JAR_PARAMS} -D${DOTENV_VAR} "
         export ${DOTENV_VAR}
+        echo "${DOTENV_VAR}"
     done
 
     export PYTHONPATH=$(pwd)
@@ -52,8 +58,8 @@ f_run_hml() {
 
     for DOTENV_VAR in $(cat environments/hml.env)
     do
-        #JAR_PARAMS="${JAR_PARAMS} -D${DOTENV_VAR} "
         export ${DOTENV_VAR}
+        echo "${DOTENV_VAR}"
     done
 
     export PYTHONPATH=$(pwd)
@@ -74,9 +80,18 @@ f_run_local() {
     echo -ne "\n#\n# DOCKER INIT SCRIPT: RUNNING ${GWA_ENVIRONMENT}.${GWA_ENVIRONMENT} \n#\n"
     echo -ne "\n# REMEMBER TO PASS ENV VARIABLES TO DOCKER RUN WITH: -e VAR1=\"FOO\" -e VAR2=\"BAR\" \n#\n"
 
+    for DOTENV_VAR in $(cat environments/hml.env)
+    do
+        #JAR_PARAMS="${JAR_PARAMS} -D${DOTENV_VAR} "
+        export ${DOTENV_VAR}
+    done
+
+    export PYTHONPATH=$(pwd)
     make db_upgrade
 
     # RUN APP
+    echo "RUNNING APP WITH:"
+    echo "${APP}"
     ${APP}
 
 }
