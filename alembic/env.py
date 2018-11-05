@@ -38,8 +38,7 @@ def run_migrations_offline():
 
     """
     alembic_config = config.get_section(config.config_ini_section)
-    alembic_config['sqlalchemy.url'] = f"postgresql://gwa_common:D1685E7932B7B71F138CECE1C0300414" \
-                                       f"@localhost:5432/gwa_common_db"
+    alembic_config['sqlalchemy.url'] = DatabaseConfig.get_uri()
 
     engine = engine_from_config(alembic_config)
 
@@ -62,8 +61,7 @@ def run_migrations_online():
     """
     # from gwa_common.settings import DatabaseConfig
     alembic_config = config.get_section(config.config_ini_section)
-    alembic_config['sqlalchemy.url'] = f"postgresql://{DatabaseConfig.DB_USER}:{DatabaseConfig.DB_PASSWORD}" \
-                                       f"@{DatabaseConfig.DB_HOST}/{DatabaseConfig.DB_NAME}"
+    alembic_config['sqlalchemy.url'] = DatabaseConfig.get_uri()
 
     print(f'Connection to {alembic_config["sqlalchemy.url"]}')
 

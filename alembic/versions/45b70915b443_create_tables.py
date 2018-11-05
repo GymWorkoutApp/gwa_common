@@ -26,7 +26,8 @@ def upgrade():
         sa.Column('id', UUID(as_uuid=True), nullable=False, unique=True),
         sa.Column('description', sa.String(100), nullable=False, unique=True),
         sa.Column('deleted', sa.Boolean, nullable=False, default=False),
-        sa.Column('created_at', sa.DateTime(), nullable=False, default=datetime.utcnow)
+        sa.Column('created_at', sa.DateTime(), nullable=False, default=datetime.utcnow),
+        sa.Column('updated_at', sa.DateTime(), nullable=True),
     )
 
 

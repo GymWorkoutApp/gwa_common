@@ -14,13 +14,7 @@ then
 fi
 
 # DOCKER ENTRYPOINT GIVE US THE EXECUTION FILE AS PARAMETER
-cpu_count=${nproc}
-if [ -z "${cpu_count}" ]
-then
-    cpu_count=2
-fi
-echo "CPU Count=${cpu_count}"
-APP="gunicorn --workers=${cpu_count} --worker-class=egg:meinheld#gunicorn_worker ${1}"
+APP="gunicorn -c ${1} ${2}:app "
 
 
 #

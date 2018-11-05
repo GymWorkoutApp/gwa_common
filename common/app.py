@@ -3,16 +3,22 @@ import logging
 from flask import Blueprint
 from flask_cors import CORS
 from flask_restful import Api
-from flask_sqlalchemy import SQLAlchemy
 from gwa_framework.app import GWAApp
+from gwa_framework.auth import GWAAuth
 
-from gwa_common.resources import resources_v1
-from gwa_common.settings import PORT, DEBUG, GWAAppConfig
+from common.resources import resources_v1
+from common.settings import PORT, DEBUG, GWAAppConfig
 
-app = GWAApp(__name__, static_folder=None)
-GWAAppConfig(app)
-CORS(app)
-db = SQLAlchemy(app)
+
+def create_app():
+    new_app = GWAApp(__name__, static_folder=None)
+    GWAAppConfig(new_app)
+    GWAAuth(new_app)
+    CORS(new_app)
+    return new_app
+
+
+app = create_app()
 
 # version 1
 bp_v1 = Blueprint('v1', __name__, url_prefix='/v1')
@@ -20,7 +26,8 @@ api_v1 = Api(bp_v1)
 app.register_blueprint(bp_v1)
 
 for resource_v1 in resources_v1:
-    api_v1.add_resource(resource_v1['resource'], *resource_v1['urls'], endpoint=resource_v1['endpoint'])
+    api_v1.add_resource(resource_v1['resource'], *resource_v1['urls'], endpoint=resource_v1['endpoint'],
+                        methods=resource_v1['methods'])
 
 if __name__ == '__main__':
     gunicorn_logger = logging.getLogger('gunicorn.error')

@@ -1,4 +1,4 @@
-FROM python:alpine AS python_gwa_common
+FROM python:alpine
 
 WORKDIR /srv
 
@@ -28,4 +28,4 @@ RUN cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
 EXPOSE 8080
 
 # ENTRYPOINT
-ENTRYPOINT ["sh", "app.sh", "gwa_common:app"]
+ENTRYPOINT ["sh", "app.sh", "./common/gunicorn.py", "common:app"]

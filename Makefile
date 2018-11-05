@@ -14,6 +14,10 @@ setup_dev:
 	@echo "-- Installing Dev Python Dependencies --"
 	@pip install -r requirements-dev.txt
 
+run:
+	@echo "---- Running Application ----"
+	@PYTHONPATH="${PYTHONPATH}" gunicorn -c ./common/gunicorn.py common.app:app
+
 test:
 	@echo "-- [$(NAME)] test --"
 	@PYTHONPATH=$(BASE_DIR) pytest
@@ -57,8 +61,8 @@ release:
 		exit 1; \
 	fi
 	@echo "Creating a new release version: ${v}"
-	@echo "__version__ = '${v}'" > `pwd`/gwa_common/version.py
-	@git add gwa_common/version.py
+	@echo "__version__ = '${v}'" > `pwd`/common/version.py
+	@git add common/version.py
 	@git commit -m 'New version: ${v}'
 	@git tag ${v}
 	@git push origin ${v}

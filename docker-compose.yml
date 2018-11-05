@@ -1,12 +1,16 @@
 version: '3'
 
+volumes:
+     pgdata:
+
 services:
   gwa_common:
+    container_name: gwa_common
     build: .
     expose:
       - 8000
     ports:
-      - 8000:8000
+      - 8080:8080
     depends_on:
       - redis_gwa_common
       - postgres_gwa_common
@@ -28,6 +32,8 @@ services:
     - 5432
     ports:
     - 5432:5432
+    volumes:
+    - pgdata:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: gwa_common_db
       POSTGRES_USER: gwa_common
