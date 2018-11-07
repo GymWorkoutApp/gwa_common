@@ -6,6 +6,7 @@ from flask_restful import Api
 from gwa_framework.app import GWAApp
 from gwa_framework.auth import GWAAuth
 
+from common.database import db
 from common.resources import resources_v1
 from common.settings import PORT, DEBUG, GWAAppConfig
 
@@ -15,6 +16,7 @@ def create_app():
     GWAAppConfig(new_app)
     GWAAuth(new_app)
     CORS(new_app)
+    db.init_app(new_app)
     return new_app
 
 
