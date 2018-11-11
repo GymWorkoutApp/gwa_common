@@ -1,0 +1,40 @@
+version: '3'
+
+volumes:
+     pgdata:
+
+services:
+  gwa_common:
+    container_name: gwa_common
+    build: .
+    expose:
+      - 8000
+    ports:
+      - 8080:8080
+    depends_on:
+      - redis_gwa_common
+      - postgres_gwa_common
+    links:
+      - redis_gwa_common
+    env_file:
+      - environments/hml.env
+
+  redis_gwa_common:
+    container_name: redis_gwa_common
+    image: redis:alpine
+    ports:
+      - 6379:6379
+
+  postgres_gwa_common:
+    container_name: postgres_gwa_common
+    image: postgres:alpine
+    expose:
+    - 5432
+    ports:
+    - 5432:5432
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: gwa_common_db
+      POSTGRES_USER: gwa_common
+      POSTGRES_PASSWORD: D1685E7932B7B71F138CECE1C0300414
