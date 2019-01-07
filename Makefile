@@ -1,8 +1,8 @@
 # Variables
 GIT_CURRENT_BRANCH := ${shell git symbolic-ref --short HEAD}
-NAME := gwa_common.server
+NAME := gwap-goal
 BASE_DIR := ./
-SRC_DIR := $(BASE_DIR)/gwa_common/
+SRC_DIR := $(BASE_DIR)/gwap-goal/
 SRC_TESTS_DIR := $(SRC_DIR)/tests/
 
 
@@ -16,7 +16,7 @@ setup_dev:
 
 run:
 	@echo "---- Running Application ----"
-	@PYTHONPATH="${PYTHONPATH}" gunicorn -c ./common/gunicorn.py common.app:app
+	@PYTHONPATH="${PYTHONPATH}" gunicorn -c ./goal/gunicorn.py common.app:app
 
 test:
 	@echo "-- [$(NAME)] test --"
@@ -61,8 +61,8 @@ release:
 		exit 1; \
 	fi
 	@echo "Creating a new release version: ${v}"
-	@echo "__version__ = '${v}'" > `pwd`/common/version.py
-	@git add common/version.py
+	@echo "__version__ = '${v}'" > `pwd`/src/version.py
+	@git add src/version.py
 	@git commit -m 'New version: ${v}'
 	@git tag ${v}
 	@git push origin ${v}

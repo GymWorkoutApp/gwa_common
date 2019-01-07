@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session
 
-from common.settings import DatabaseConfig
+from src.settings import DatabaseConfig
 
 engine = create_engine(DatabaseConfig.get_uri())
 

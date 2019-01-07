@@ -6,14 +6,15 @@ from flask_restful import Api
 from gwa_framework.app import GWAApp
 from gwa_framework.auth import GWAAuth
 
-from common.database import db
-from common.resources import resources_v1
-from common.settings import PORT, DEBUG, GWAAppConfig
+from src.database import db
+from src.resources import resources_v1
+from src.settings import PORT, DEBUG, GWAAppConfig
 
 
 def create_app():
     new_app = GWAApp(__name__, static_folder=None)
     GWAAppConfig(new_app)
+    # ElasticAPM(new_app, logging=True)
     GWAAuth(new_app)
     CORS(new_app)
     db.init_app(new_app)

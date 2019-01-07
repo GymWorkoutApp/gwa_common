@@ -5,7 +5,7 @@ from logging.config import fileConfig
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
-from gwa_common.settings import DatabaseConfig
+from src.settings import DatabaseConfig
 
 config = context.config
 

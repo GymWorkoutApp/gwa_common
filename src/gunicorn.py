@@ -1,5 +1,5 @@
 import multiprocessing
-from common import settings
+from src import settings
 
 bind = '{host}:{port}'.format(host=settings.HOST, port=settings.PORT)
 workers = multiprocessing.cpu_count() * 2 + 1

@@ -28,4 +28,4 @@ RUN cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime && \
 EXPOSE 8080
 
 # ENTRYPOINT
-ENTRYPOINT ["sh", "app.sh", "./common/gunicorn.py", "common:app"]
+ENTRYPOINT ["sh", "app.sh", "./src/gunicorn.py", "src:app"]

@@ -1,6 +1,6 @@
 import setuptools
 from setuptools import find_packages
-import common
+import src
 
 
 def long_description():
@@ -10,7 +10,7 @@ def long_description():
 
 setuptools.setup(
     name='gwa_common',
-    version=common.__version__,
+    version=src.__version__,
 
     url='',
     description='Microservice that keep endpoints commons to GWA.',
