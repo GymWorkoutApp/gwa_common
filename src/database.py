@@ -6,15 +6,31 @@ from sqlalchemy.orm import scoped_session
 
 from src.settings import DatabaseConfig
 
-engine = create_engine(DatabaseConfig.get_uri())
+master_engine = create_engine(DatabaseConfig.get_uri())
+read_replica_engine = create_engine(DatabaseConfig.get_uri())
 
 db = SQLAlchemy()
 
 
 @contextmanager
-def async_session() -> scoped_session:
+def master_async_session() -> scoped_session:
     session = db.create_scoped_session(
-        options=dict(bind=engine, binds={})
+        options=dict(bind=master_engine, binds={})
+    )
+    try:
+        yield session
+        session.commit()
+    except Exception as e:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+
+
+@contextmanager
+def read_replica_async_session() -> scoped_session:
+    session = db.create_scoped_session(
+        options=dict(bind=read_replica_engine, binds={})
     )
     try:
         yield session

@@ -1,6 +1,6 @@
 from typing import List
 
-from src.database import async_session
+from src.database import master_async_session, read_replica_async_session
 from src.models import GoalModel
 
 
@@ -8,23 +8,20 @@ class GoalRepository:
 
     @staticmethod
     def get(kwargs) -> List:
-        with async_session() as session:
+        with read_replica_async_session() as session:
             return session.query(GoalModel)
 
     @staticmethod
-    def create(goal: GoalModel) -> GoalModel:
-        with async_session() as session:
-            session.save(goal)
-            session.commit()
+    def create(goal: GoalModel) -> None:
+        with master_async_session() as session:
+            session.add(goal)
 
     @staticmethod
-    def update(goal: GoalModel) -> GoalModel:
-        with async_session() as session:
-            session.save(goal)
-            session.commit()
+    def update(goal: GoalModel) -> None:
+        with master_async_session() as session:
+            session.add(goal)
 
     @staticmethod
-    def delete(goal_id) -> List:
-        with async_session() as session:
+    def delete(goal_id) -> None:
+        with master_async_session() as session:
             session.delete(GoalModel)
-            session.commit()

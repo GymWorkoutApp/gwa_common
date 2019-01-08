@@ -38,14 +38,16 @@ class ElasticApmConfig:
 
 class DatabaseConfig:
     DB_HOST = config('DB_HOST')
+    DB_HOST_REPLICA = config('DB_HOST_REPLICA')
     DB_USER = config('DB_USER')
     DB_PASSWORD = config('DB_PASSWORD')
     DB_NAME = config('DB_NAME')
 
     @staticmethod
-    def get_uri():
-        return f"postgresql://{DatabaseConfig.DB_USER}:{DatabaseConfig.DB_PASSWORD}" \
-               f"@{DatabaseConfig.DB_HOST}/{DatabaseConfig.DB_NAME}"
+    def get_uri(read_replica=False):
+        if not read_replica:
+            return f"postgresql://{DatabaseConfig.DB_USER}:{DatabaseConfig.DB_PASSWORD}@{DatabaseConfig.DB_HOST}/{DatabaseConfig.DB_NAME}"
+        return f"postgresql://{DatabaseConfig.DB_USER}:{DatabaseConfig.DB_PASSWORD}@{DatabaseConfig.DB_HOST_REPLICA}/{DatabaseConfig.DB_NAME}"
 
 
 class LoggerSettings:
